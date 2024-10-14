@@ -22,7 +22,7 @@
   color: var(--textPrimary);
 
   background-color: var(--primary);
-  background-image: url("./assets/Background_image.svg");
+  background-image: url("../assets/Background_image.svg");
 }
 
 * {
