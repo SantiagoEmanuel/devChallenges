@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit";
+  font-weight: 400;
+  line-height: 1.35rem;
+  text-decoration: none;
+}
+
+:root {
+  --headingSize: 2.5rem;
+  --labelSize: 1.25rem;
+  --bodyTextSize: 1rem;
+
+  --headingWeight: 500;
+  --labelWeight: 600;
+  --bodyTextWeight: 400;
+  --anchorWeight: 500;
+
+  --text-primary: #000000;
+  --text-secondary: #394150;
+
+  --label-primary: #fffefe;
+  --label-secondary: #f3f4f6;
+
+  --our-team-color: #3662e3;
+
+  --liam-novak: #c1b6f8;
+  --sophia-moretti: #edacd2;
+  --isabella-ricci: #f8d8b0;
+  --noah-conti: #86e7d4;
+  --ethan-rossi: #9dc4f8;
+
+  transition: all 0.3s ease;
+}
+
+header {
+  grid-area: header;
+}
+.liam {
+  grid-area: liam;
+  background-color: var(--liam-novak);
+}
+.sophia {
+  grid-area: sophia;
+  background-color: var(--sophia-moretti);
+}
+.ethan {
+  grid-area: ethan;
+  background-color: var(--ethan-rossi);
+}
+.isabella {
+  grid-area: isabella;
+  background-color: var(--isabella-ricci);
+}
+.noah {
+  grid-area: noah;
+  background-color: var(--noah-conti);
+}
+.anchor {
+  grid-area: anchor;
+}
+
+body {
+  padding: 4.5rem 4.5rem;
+  align-content: center;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header liam sophia"
+    "anchor ethan isabella noah";
+  border-radius: 0 30px 30px 0;
+  overflow: hidden;
+  gap: 0;
+  background-image: url(../assets/Background_decor.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  max-width: 1100px;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.81rem;
+
+    .our-team {
+      color: var(--our-team-color);
+    }
+
+    h1 {
+      font-size: var(--headingSize);
+      font-weight: var(--headingWeight);
+      line-height: 3.75rem;
+    }
+
+    .header-text {
+      max-width: 465px;
+      font-weight: var(--anchorWeight);
+      color: var(--text-secondary);
+    }
+  }
+
+  article {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      background-image: url(../assets/Gradient.svg);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      width: 101%;
+      height: 100%;
+      position: absolute;
+    }
+
+    &:hover {
+      background-image: url(../assets/Background_decor.svg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    div {
+      position: absolute;
+      bottom: 1.15rem;
+      left: 1.5rem;
+      h2 {
+        color: var(--label-primary);
+        font-size: var(--labelSize);
+        font-weight: var(--labelWeight);
+        line-height: 1.85rem;
+      }
+      p {
+        color: var(--label-secondary);
+        font-weight: 300;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .anchor {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    padding-bottom: 2rem;
+
+    a {
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 4px;
+      font-size: var(--bodyTextSize);
+      font-weight: var(--anchorWeight);
+      color: var(--text-primary);
+
+      img {
+        width: 16px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+}
+
+@media (width <= 1075px) {
+  body {
+    padding: 0 5rem;
+    margin: 5rem 0;
+  }
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "liam sophia ethan"
+      "anchor isabella noah";
+
+    header {
+      padding: 30px;
+    }
+
+    .anchor {
+      padding-left: 2rem;
+    }
+  }
+}
+
+@media (width <= 880px) {
+  body {
+    padding: 0 3rem;
+  }
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "liam sophia"
+      "ethan isabella"
+      "anchor noah";
+  }
+}
+
+@media (width <= 620px) {
+  body {
+    padding: 0 1rem;
+  }
+}
