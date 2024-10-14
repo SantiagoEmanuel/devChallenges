@@ -36,15 +36,17 @@
 }
 
 body {
-  margin: 3rem 0;
-  padding: 0 30px;
-  display: grid;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 30px;
 }
 
 header {
   max-width: 450px;
-  margin: auto;
+  margin: auto 0;
   display: grid;
   gap: 1rem;
 
@@ -69,7 +71,7 @@ main {
   justify-items: center;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: auto;
+  margin: auto 0;
   gap: 2.5rem;
   max-width: 1100px;
 
@@ -80,7 +82,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 0.85rem;
+    gap: 1rem;
     max-width: 320px;
     transition: all 0.15s ease-in-out;
     position: relative;
